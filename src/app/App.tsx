@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import './styles/index.scss';
-import { classNames } from 'shared/lib';
 import AppRouter from 'app/providers/router/ui/AppRouter';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from './providers/ThemeProvider';
 
 function App() {
