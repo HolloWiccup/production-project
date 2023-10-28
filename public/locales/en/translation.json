@@ -8,5 +8,11 @@
   "Главная": "Main",
   "О сайте": "About us",
   "Переключить": "Переключить",
-  "Короткий язык": "En"
+  "Короткий язык": "En",
+  "Войти": "Войти",
+  "        Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    " Dignissimos nesciunt nihil quae reiciendis tempora vitae": {
+      "\n": "        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nesciunt nihil quae reiciendis tempora vitae.\\n"
+    }
+  }
 }
