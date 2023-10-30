@@ -42,7 +42,7 @@
         "import/extensions": "off",
         "no-unused-vars": "warn",
         "no-shadow": "off",
-        "max-len": ["error",{"ignoreComments": true, "code":  100}],
+        "max-len": ["error",{"ignoreComments": true, "code":  120}],
         "react/jsx-props-no-spreading": "warn",
         "react/require-default-props": "off",
         "import/no-extraneous-dependencies": "off",

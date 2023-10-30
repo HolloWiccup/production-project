@@ -2,12 +2,13 @@ import React, {
   ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
-import { classNames } from '../../lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
   className?: string;
   children?: ReactNode;
+  lazy?: boolean;
   isOpen?: boolean;
   onClose?: () => void;
 }
@@ -16,11 +17,22 @@ const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
   const {
-    className, children, isOpen, onClose,
+    className,
+    children,
+    isOpen,
+    onClose,
+    lazy,
   } = props;
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
@@ -56,6 +68,10 @@ export const Modal = (props: ModalProps) => {
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>
