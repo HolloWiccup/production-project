@@ -1,21 +1,21 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "json-server",
       "userId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "json-server",
-      "userId": 2
+      "userId": "2"
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "body": "some comment",
-      "postId": 1
+      "postId": "1"
     }
   ],
   "users": [
@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Dmitry",
+    "lastname": "Nastr",
+    "age": "31",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Arkhangelsk",
+    "username": "admin",
+    "avatar": "https://i.pinimg.com/originals/d7/0e/95/d70e9553f55ea7a5559c3a3afa2b6d7d.jpg"
+  }
 }
