@@ -47,7 +47,7 @@ export const Input = memo((props: InputProps) => {
   useEffect(() => {
     if (autofocus) {
       setIsFocused(true);
-      ref.current.focus();
+      ref.current?.focus();
     }
   }, [autofocus]);
 
@@ -60,6 +60,7 @@ export const Input = memo((props: InputProps) => {
       )}
       <div className={cls.caretWrapper}>
         <input
+  // @ts-ignore
           ref={ref}
           className={cls.input}
           type={type}
