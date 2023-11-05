@@ -1,7 +1,7 @@
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
 
-export { profileActions, profileReducer } from './model/slice/profileSlice';
+export { profileActions, profileReducer } from 'features/EditableProfileCard/model/slice/profileSlice';
 
-export { Profile, ProfileSchema } from './model/types/profile';
+export { Profile } from './model/types/profile';
 
-export { fetchProfileDate } from './model/services/fetchProfileData/fetchProfileDate';
+export { fetchProfileDate } from 'features/EditableProfileCard/model/services/fetchProfileData/fetchProfileDate';

@@ -34,7 +34,7 @@
         "react-hooks/exhaustive-deps": "error",
         "i18next/no-literal-string": ["error", {
             "markupOnly": true,
-            "ignoreAttribute": ["data-testid", "to", "name"]
+            "ignoreAttribute": ["data-testid", "to", "name", "alt"]
         }],
         "import/prefer-default-export": "off",
         "react/react-in-jsx-scope": "off",
