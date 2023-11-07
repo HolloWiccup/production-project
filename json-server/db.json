@@ -24,15 +24,5 @@
       "username": "admin",
       "password": "123"
     }
-  ],
-  "profile": {
-    "first": "Dmitry",
-    "lastname": "Nastr",
-    "age": "31",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Arkhangelsk",
-    "username": "admin",
-    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNzbEUP_93Ay1XzcjF8CjaCgE8l4uTTCgD_kNf0Ajisg&s"
-  }
+  ]
 }

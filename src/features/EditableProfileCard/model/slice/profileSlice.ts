@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Profile } from 'entities/Profile';
 import { ProfileSchema } from '../types/profileSchema';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { fetchProfileDate } from '../services/fetchProfileData/fetchProfileDate';
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 
 const initialState: ProfileSchema = {
   data: undefined,
@@ -10,6 +10,7 @@ const initialState: ProfileSchema = {
   error: undefined,
   isLoading: false,
   readonly: true,
+  validateErrors: undefined,
 };
 
 export const profileSlice = createSlice({
@@ -22,6 +23,7 @@ export const profileSlice = createSlice({
     cancelEdit: (state) => {
       state.readonly = true;
       state.form = state.data;
+      state.validateErrors = undefined;
     },
     updateProfile: (state, action: PayloadAction<Profile>) => {
       state.form = {
@@ -32,21 +34,21 @@ export const profileSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchProfileDate.pending, (state) => {
+      .addCase(fetchProfileData.pending, (state) => {
         state.error = undefined;
         state.isLoading = true;
       })
-      .addCase(fetchProfileDate.fulfilled, (state, action: PayloadAction<Profile>) => {
+      .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
         state.isLoading = false;
         state.data = action.payload;
         state.form = action.payload;
       })
-      .addCase(fetchProfileDate.rejected, (state, action) => {
+      .addCase(fetchProfileData.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
       .addCase(updateProfileData.pending, (state) => {
-        state.error = undefined;
+        state.validateErrors = undefined;
         state.isLoading = true;
       })
       .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
@@ -54,10 +56,11 @@ export const profileSlice = createSlice({
         state.readonly = true;
         state.data = action.payload;
         state.form = action.payload;
+        state.validateErrors = undefined;
       })
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+        state.validateErrors = action.payload;
       });
   },
 });
