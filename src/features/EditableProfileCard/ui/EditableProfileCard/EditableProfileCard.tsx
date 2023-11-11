@@ -47,6 +47,7 @@ export const EditableProfileCard = ({ className }: EditableProfileCardProps) => 
     if (__PROJECT__ !== 'storybook') {
       dispatch(fetchProfileData());
     }
+    console.log('mounted');
   }, [dispatch]);
 
   const formData = useSelector(getProfileForm);

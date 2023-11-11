@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
-import { Text, ThemeText } from './Text';
+import { Text, TextSize, ThemeText } from './Text';
 import { ThemeDecorator } from '../../config/storybook/ThemeDecorator/ThemeDecorator';
 
 export default {
@@ -17,6 +17,13 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
+  title: 'Text lorem ipsoun',
+  text: 'Description Description Description Description',
+};
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+  size: TextSize.L,
   title: 'Text lorem ipsoun',
   text: 'Description Description Description Description',
 };

@@ -8,6 +8,6 @@ describe('profileSlice.test', () => {
     expect(profileReducer(
       state as ProfileSchema,
       profileActions.setReadOnly(true),
-    )).toEqual(true);
+    )).toEqual({ readonly: true });
   });
 });
