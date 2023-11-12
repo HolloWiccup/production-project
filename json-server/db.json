@@ -36,13 +36,16 @@
       "id": 1,
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://i.pinimg.com/originals/d7/0e/95/d70e9553f55ea7a5559c3a3afa2b6d7d.jpg"
+
     },
     {
       "id": 2,
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://i.pinimg.com/originals/d7/0e/95/d70e9553f55ea7a5559c3a3afa2b6d7d.jpg"
     }
   ],
   "profile": {
