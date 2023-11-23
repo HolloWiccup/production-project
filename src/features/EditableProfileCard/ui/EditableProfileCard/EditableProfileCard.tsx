@@ -13,7 +13,9 @@ import {
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, ThemeText } from 'shared/ui/Text/Text';
-import { ValidateProfileError } from 'features/EditableProfileCard/model/types/profileSchema';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { getCanEdit } from 'features/EditableProfileCard/model/selectors/getCanEdit/getCanEdit';
+import { ValidateProfileError } from '../../model/types/profileSchema';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
@@ -26,13 +28,15 @@ import {
 
 interface EditableProfileCardProps {
   className?: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
   profile: profileReducer,
 };
 
-export const EditableProfileCard = ({ className }: EditableProfileCardProps) => {
+export const EditableProfileCard = (props: EditableProfileCardProps) => {
+  const { className, id } = props;
   const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
 
@@ -43,16 +47,16 @@ export const EditableProfileCard = ({ className }: EditableProfileCardProps) => 
     [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-    console.log('mounted');
-  }, [dispatch]);
+  });
 
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
+  const canEdit = useSelector(getCanEdit);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
 
@@ -91,7 +95,7 @@ export const EditableProfileCard = ({ className }: EditableProfileCardProps) => 
   return (
     <div className={classNames(cls.EditableProfileCard, {}, [className])}>
       <DynamicModuleLoader reducers={reducers}>
-        <EditableProfileCardHeader />
+        <EditableProfileCardHeader canEdit={canEdit} />
         {validateErrors?.length && (
         <div>
           {validateErrors.map((err) => (

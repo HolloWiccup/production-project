@@ -20,6 +20,8 @@ export const Avatar = (props: AvatarProps) => {
     height: size || 100,
   }), [size]);
 
+  console.log(src);
+
   return (
     <img
       src={src}

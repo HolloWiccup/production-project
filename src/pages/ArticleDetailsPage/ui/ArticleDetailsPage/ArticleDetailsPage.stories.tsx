@@ -21,7 +21,10 @@ const data: Article = {
   img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png',
   views: 1022,
   createdAt: '26.04.2022',
-  userId: '1',
+  user: {
+    id: '1',
+    username: 'HolloW',
+  },
   type: [
     ArticleType.IT,
   ],

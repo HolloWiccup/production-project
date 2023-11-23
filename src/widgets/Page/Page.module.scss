@@ -1,0 +1,11 @@
+.Page {
+  padding: 20px 40px;
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
+  width: 100%;
+}
+
+.trigger {
+  height: 10px;
+  margin-top: 10px;
+}

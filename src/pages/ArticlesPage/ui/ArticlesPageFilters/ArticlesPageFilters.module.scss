@@ -1,0 +1,13 @@
+.ArticlesPageFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sortWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 16px;
+}

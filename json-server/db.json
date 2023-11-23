@@ -29,35 +29,78 @@
       "text": "some commesnt",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "выа",
+      "id": "XMfFp9z"
+    },
+    {
+      "articleId": "1",
+      "userId": 2,
+      "text": "dsfsf",
+      "id": "dRrP6Ju"
+    },
+    {
+      "articleId": "1",
+      "userId": 2,
+      "text": "выа",
+      "id": "BL8gws1"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "dsfdsf",
+      "id": "GsEPBCP"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "kotlin",
+      "id": "j4sLjel"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
       "avatar": "https://i.pinimg.com/originals/d7/0e/95/d70e9553f55ea7a5559c3a3afa2b6d7d.jpg"
-
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://i.pinimg.com/originals/d7/0e/95/d70e9553f55ea7a5559c3a3afa2b6d7d.jpg"
+      "avatar": "https://img.freepik.com/premium-vector/hacker-character-logo-design_303861-129.jpg"
     }
   ],
-  "profile": {
-    "first": "Dmitry",
-    "lastname": "Nastr",
-    "age": "31",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Arkhangelsk",
-    "username": "admin",
-    "avatar": "https://i.pinimg.com/originals/d7/0e/95/d70e9553f55ea7a5559c3a3afa2b6d7d.jpg"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "first": "Dmitry",
+      "lastname": "Nastr",
+      "age": 31,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Arkhangelsk",
+      "username": "admin",
+      "avatar": "https://i.pinimg.com/originals/d7/0e/95/d70e9553f55ea7a5559c3a3afa2b6d7d.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Dmiy",
+      "lastname": "Nastr",
+      "age": "31",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Arkhangelsk",
+      "username": "user",
+      "avatar": "https://img.freepik.com/premium-vector/hacker-character-logo-design_303861-129.jpg"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -158,8 +201,8 @@
     {
       "id": "3",
       "title": "Kotlin news 2019",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/1024px-Kotlin_Icon.svg.png?20171012085709",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 94002,
       "createdAt": "26.02.2019",
       "userId": "1",
@@ -303,7 +346,7 @@
       "id": "9",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/1024px-Kotlin_Icon.svg.png?20171012085709",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -351,7 +394,7 @@
       "id": "11",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/1024px-Kotlin_Icon.svg.png?20171012085709",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -399,7 +442,7 @@
       "id": "13",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/1024px-Kotlin_Icon.svg.png?20171012085709",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -447,7 +490,7 @@
       "id": "15",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/1024px-Kotlin_Icon.svg.png?20171012085709",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -495,7 +538,7 @@
       "id": "17",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/1024px-Kotlin_Icon.svg.png?20171012085709",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",

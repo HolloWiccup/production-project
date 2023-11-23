@@ -16,9 +16,11 @@ import cls from './EditableProfileCardHeader.module.scss';
 
 interface EditableProfileCardHeaderProps {
   className?: string;
+  canEdit?: boolean;
 }
 
-export const EditableProfileCardHeader = ({ className }: EditableProfileCardHeaderProps) => {
+export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps) => {
+  const { className, canEdit } = props;
   const { t } = useTranslation('profile');
 
   const dispatch = useAppDispatch();
@@ -40,31 +42,35 @@ export const EditableProfileCardHeader = ({ className }: EditableProfileCardHead
   return (
     <div className={classNames(cls.EditableProfileCardHeader, {}, [className])}>
       <Text title={t('Профиль')} />
-      {readonly
-        ? (
-          <Button
-            onClick={onEdit}
-            theme={ThemeButton.OUTLINE}
-          >
-            {t('Редактировать')}
-          </Button>
-        )
-        : (
-          <div className={cls.buttons}>
-            <Button
-              onClick={cancelEdit}
-              theme={ThemeButton.OUTLINE_RED}
-            >
-              {t('Отменить')}
-            </Button>
-            <Button
-              onClick={onSave}
-              theme={ThemeButton.OUTLINE}
-            >
-              {t('Сохранить')}
-            </Button>
-          </div>
-        )}
+      {canEdit && (
+        <div>
+          {readonly
+            ? (
+              <Button
+                onClick={onEdit}
+                theme={ThemeButton.OUTLINE}
+              >
+                {t('Редактировать')}
+              </Button>
+            )
+            : (
+              <div className={cls.buttons}>
+                <Button
+                  onClick={cancelEdit}
+                  theme={ThemeButton.OUTLINE_RED}
+                >
+                  {t('Отменить')}
+                </Button>
+                <Button
+                  onClick={onSave}
+                  theme={ThemeButton.OUTLINE}
+                >
+                  {t('Сохранить')}
+                </Button>
+              </div>
+            )}
+        </div>
+      )}
     </div>
 
   );

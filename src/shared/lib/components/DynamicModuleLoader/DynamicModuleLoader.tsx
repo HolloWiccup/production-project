@@ -9,25 +9,35 @@ export type ReducersList = {
 }
 
 interface DynamicModuleLoaderProps {
-  reducers: ReducersList
+  reducers: ReducersList;
+  removeAfterUnmount?: boolean;
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
-  const { children, reducers } = props;
+  const {
+    children,
+    reducers,
+    removeAfterUnmount = true,
+  } = props;
   const dispatch = useDispatch();
   const store = useStore() as ReduxStoreWithManager;
-  console.log(props);
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap();
     Object.entries(reducers).forEach(([name, reducer]) => {
-      store.reducerManager.add(name as StateSchemaKey, reducer);
-      dispatch({ type: `@INIT ${name} reducer` });
+      const mounted = mountedReducers[name as StateSchemaKey];
+      if (!mounted) {
+        store.reducerManager.add(name as StateSchemaKey, reducer);
+        dispatch({ type: `@INIT ${name} reducer` });
+      }
     });
 
     return () => {
-      Object.entries(reducers).forEach(([name, _]) => {
-        store.reducerManager.remove(name as StateSchemaKey);
-        dispatch({ type: `@DESTROY ${name} reducer` });
-      });
+      if (removeAfterUnmount) {
+        Object.entries(reducers).forEach(([name, _]) => {
+          store.reducerManager.remove(name as StateSchemaKey);
+          dispatch({ type: `@DESTROY ${name} reducer` });
+        });
+      }
     };
     // eslint-disable-next-line
   }, []);
